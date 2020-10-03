@@ -54,7 +54,7 @@ jobs:
         script: |
           sudo docker pull icgrem/yamdb-final
           sudo docker stop $(docker ps -a -q)
-          sudo docker run --rm -d -p 81:80 icgrem/yamdb-final
+          sudo docker run --rm -d -p 8000:8000 icgrem/yamdb-final
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
