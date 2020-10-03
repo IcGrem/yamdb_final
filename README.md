@@ -1,6 +1,6 @@
 https://github.com/IcGrem/yamdb_final/workflows/yamdb-final/badge.svg  
-# Проект: Docker. Запуск docker-compose  
-## Задача проекта - создание и запуск Docker-контейнеров для развёртывания проекта YamDB на компьютере  
+# Проект: Continuous Integration проекта YaMDB  
+## Задача проекта - настроить Continuous Integration и Continuous Deployment для проекта YaMDB: автоматический запуск тестов, обновление образов на Docker Hub и автоматический деплой на боевой сервер при пуше в ветку master.  
 В результате установки будут запущены два контейнера, первый - приложение YamDB, второй - база данных PostgreSQL.  
 ### Установка
 Для установки на локальном компьютере необходимо:
