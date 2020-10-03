@@ -1,4 +1,4 @@
-name: YamDB-final workflow
+name: yamdb-final workflow
 
 on: [push]
 
@@ -37,7 +37,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: icgrem/YamDB-final
+        repository: icgrem/yamdb-final
         tag_with_ref: true
   deploy:
     runs-on: ubuntu-latest
@@ -54,7 +54,7 @@ jobs:
         script: |
           sudo docker pull icgrem/yamdb-final
           sudo docker stop $(docker ps -a -q)
-          sudo docker run --rm -d -p 81:80 icgrem/YamDB-final
+          sudo docker run --rm -d -p 81:80 icgrem/yamdb-final
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
