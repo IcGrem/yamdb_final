@@ -42,7 +42,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
                 {'email': 'Email addresses must be unique.'}
             )
         confirmation_code = encode(''.join(random.choice(
-                string.ascii_uppercase + string.digits
+            string.ascii_uppercase + string.digits
         ) for _ in range(8)))
         username = email.replace('@', '_').replace('.', '_')
         email = email
