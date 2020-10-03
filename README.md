@@ -1,9 +1,9 @@
 ![yamdb-final-workflow](https://github.com/IcGrem/yamdb_final/workflows/yamdb-final-workflow/badge.svg)
 
-# Проект: Continuous Integration проекта YaMDB  
+# Проект: CI/CD проекта YaMDB  
 ## Задача проекта - настроить Continuous Integration и Continuous Deployment для проекта YaMDB: автоматический запуск тестов, обновление образов на Docker Hub и автоматический деплой на боевой сервер при пуше в ветку master.  
-В результате установки будут запущены два контейнера, первый - приложение YamDB, второй - база данных PostgreSQL.  
-### Установка
+Файл ```yamdb_workflow.yaml``` находится в корне проекта. Для работы с Docker Hub и диплоем на удалённый сервер, а также отправке уведомлений телеграм-боту, необходимо указать значения соответствующих переменных в настройках репозитория ***Secrets***.  
+### Установка на локальный компьютер
 Для установки на локальном компьютере необходимо:
 * Установить Docker
 * Скачать файлы проекта из репозитория  
@@ -17,4 +17,9 @@
     ```docker-compose exec web python manage.py createsuperuser```
 * Заполнить БД начальными данными:  
     ```docker-compose exec web python manage.py loaddata fixtures.json```
+В результате установки будут запущены три контейнера, первый - приложение YamDB, второй - база данных PostgreSQL, третий - веб-сервер NGINX, настроенный на адрес http://127.0.0.1
+
+
+
+
 ## Подробное описание проекта YamDB находится в файле README-YamDB.md  
