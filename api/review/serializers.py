@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404
+# from django.shortcuts import get_object_or_404
 from rest_framework import serializers
 from rest_framework.exceptions import (
     ValidationError,
@@ -6,8 +6,8 @@ from rest_framework.exceptions import (
     AuthenticationFailed
 )
 
-from api.title.models import Category, Genre, Title
-from api.users.models import User
+# from api.title.models import Category, Genre, Title
+# from api.users.models import User
 
 from .models import Review, Comment
 
@@ -25,7 +25,7 @@ class ReviewSerializer(serializers.ModelSerializer):
         request = self.context.get('request')
         title_id = request.parser_context['kwargs']['title_id']
         method = request.method
-        title = get_object_or_404(Title, pk=title_id)
+        # title = get_object_or_404(Title, pk=title_id)
         review = Review.objects.filter(title_id=title_id, author=author)
         if method == 'POST' and review:
             raise ValidationError('Только один отзыв на одно произведение.')
@@ -59,7 +59,7 @@ class CommentSerializer(serializers.ModelSerializer):
         author = self.context['request'].user
         request = self.context.get('request')
         review_id = request.parser_context['kwargs']['review_id']
-        review = get_object_or_404(Review, pk=review_id)
+        # review = get_object_or_404(Review, pk=review_id)
         return Comment.objects.create(
             author=author,
             review_id=review_id,
