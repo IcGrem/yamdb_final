@@ -64,4 +64,4 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: ${{ github.yamdb-final_workflow }} залит и запущен!
+        message: ${{ github.workflow }} залит и запущен!
