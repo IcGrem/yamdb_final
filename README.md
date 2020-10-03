@@ -1,4 +1,4 @@
-![yamdb-final workflow](https://github.com/IcGrem/yamdb_final/workflows/yamdb-final%20workflow/badge.svg)
+https://github.com/IcGrem/yamdb_final/workflows/yamdb-final%20workflow/badge.svg  
 # Проект: Continuous Integration проекта YaMDB  
 ## Задача проекта - настроить Continuous Integration и Continuous Deployment для проекта YaMDB: автоматический запуск тестов, обновление образов на Docker Hub и автоматический деплой на боевой сервер при пуше в ветку master.  
 В результате установки будут запущены два контейнера, первый - приложение YamDB, второй - база данных PostgreSQL.  
