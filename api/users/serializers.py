@@ -41,10 +41,9 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(
                 {'email': 'Email addresses must be unique.'}
             )
-        confirmation_code = encode(
-            ''.join(random.choice(
+        confirmation_code = encode(''.join(random.choice(
                 string.ascii_uppercase + string.digits
-                ) for _ in range(8)))
+        ) for _ in range(8)))
         username = email.replace('@', '_').replace('.', '_')
         email = email
         c_c = confirmation_code
