@@ -1,4 +1,4 @@
-![yamdb-final workflow](https://github.com/IcGrem/yamdb_final/workflows/yamdb-final-workflow/badge.svg)
+![yamdb-final-workflow](https://github.com/IcGrem/yamdb_final/workflows/yamdb-final-workflow/badge.svg)
 
 # Проект: Continuous Integration проекта YaMDB  
 ## Задача проекта - настроить Continuous Integration и Continuous Deployment для проекта YaMDB: автоматический запуск тестов, обновление образов на Docker Hub и автоматический деплой на боевой сервер при пуше в ветку master.  
