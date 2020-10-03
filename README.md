@@ -1,4 +1,4 @@
-[GITHUB-BADGE](https://github.com/IcGrem/yamdb_final/workflows/yamdb-final%20workflow/badge.svg)  
+[GITHUB-BADGE](https://github.com/IcGrem/yamdb_final/workflows/yamdb-final/badge.svg)  
 # Проект: Docker. Запуск docker-compose  
 ## Задача проекта - создание и запуск Docker-контейнеров для развёртывания проекта YamDB на компьютере  
 В результате установки будут запущены два контейнера, первый - приложение YamDB, второй - база данных PostgreSQL.  
