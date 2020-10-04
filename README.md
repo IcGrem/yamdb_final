@@ -22,4 +22,4 @@
 
 
 
-## Подробное описание проекта YamDB находится в файле README-YamDB.md  
+## Подробное описание проекта YamDB находится в файле [README-YamDB.md](https://github.com/IcGrem/yamdb_final/edit/master/README-YamDB.md)
