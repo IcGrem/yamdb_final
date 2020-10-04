@@ -4,12 +4,9 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /code
 
-RUN pip install --upgrade pip
-COPY requirements.txt /code
-RUN pip install -r /code/requirements.txt
-
 COPY . /code
 
-RUN python manage.py collectstatic --noinput
+RUN pip install --upgrade pip
+RUN pip install -r /code/requirements.txt
 
-CMD gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000
+RUN python manage.py collectstatic --noinput

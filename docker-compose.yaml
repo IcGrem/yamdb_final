@@ -7,6 +7,7 @@ volumes:
 services:
   db:
     image: postgres:latest
+    # не могу исправить, тесты требуют latest
     restart: always
     volumes:
       - postgres_data:/var/lib/postgresql/data/
@@ -36,4 +37,3 @@ services:
       - "80:80"
     depends_on:
       - web
-      
