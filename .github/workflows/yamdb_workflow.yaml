@@ -18,7 +18,6 @@ jobs:
         pip install -r requirements.txt
     - name: Lint with flake8
       run: flake8 --ignore=E501,F401,F403,F405 .
-
     - name: Test with pytest
       run: pytest
   push_to_docker_hub:
@@ -28,7 +27,6 @@ jobs:
     steps:
     - name: Check out the repo
       uses: actions/checkout@v2
-
     - name: Push to Docker Hub
       uses: docker/build-push-action@v1
       with:
