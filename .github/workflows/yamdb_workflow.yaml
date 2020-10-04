@@ -44,7 +44,7 @@ jobs:
         host: ya-tube.ga
         username: icgrem
         key: ${{ secrets.SSH_KEY }}
-        passphrase: ${{ secrets.PASSPHRASE }} # если ваш ssh-ключ защищен фразой-паролем
+        passphrase: ${{ secrets.PASSPHRASE }}
         port: 22
         script: |
           sudo docker pull icgrem/yamdb-final
