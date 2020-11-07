@@ -8,12 +8,12 @@
 * Установить Docker
 * Скачать файлы проекта из репозитория  
 * В директории проекта необходимо создать файл .env, в котором указать переменные окружения (например):
-- DB_NAME=postgres
-- POSTGRES_USER=postgres
-- POSTGRES_PASSWORD=postgres
-- DB_HOST=db
-- DB_PORT=5432
-- SECRET_KEY=можно сгенерировать [по адресу](https://djecrety.ir)
+    - DB_NAME=postgres
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgres
+    - DB_HOST=db
+    - DB_PORT=5432
+    - SECRET_KEY=можно сгенерировать [по адресу](https://djecrety.ir)
 * Для сборки и запуска контейнеров перейдите в корневую папку проекта и выполните команду:  
     ```docker-compose up -d --build```
 
