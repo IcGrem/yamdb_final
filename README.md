@@ -26,8 +26,8 @@
     ```docker-compose exec web python manage.py loaddata fixtures.json```  
 
 В результате установки будут запущены три контейнера: первый - приложение YamDB, второй - база данных PostgreSQL, третий - веб-сервер NGINX, настроенный на адрес http://127.0.0.1/api/v1/  
-Пример работы сервиса можно посмотреть по адресу https://yamdb.ga  
-
+Пример работы сервиса можно посмотреть по адресу https://yamdb.ga/api/v1/   
+Подробная информация о методах данного API https://yamdb.ga/redoc/
 
 
 
