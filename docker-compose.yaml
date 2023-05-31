@@ -1,38 +1,49 @@
-version: '3.8'
+version: '3.9'
 
 volumes:
-  postgres_data:
-  staticfiles:
+  yaml_postgres_data:
+  yaml_staticfiles:
+  yaml_mediafiles:
 
 services:
-  db:
-    image: postgres:latest
+  yaml_db:
+    image: postgres:13.0-alpine
     restart: always
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
-    env_file:
-      - ./.env
+      - yaml_postgres_data:/var/lib/postgresql/data/
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+      - PGGSSENCMODE=disable
 
-  web:
+  yaml_web:
     build: .
     restart: always
-    command: gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000
+    command: gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:4001
     volumes:
-      - staticfiles:/code/static/
-      - staticfiles:/code/media/
+      - yaml_staticfiles:/code/static/
+      - yaml_mediafiles:/code/media/
     ports:
-      - 8000:8000
+      - 4001:4001
     depends_on:
-      - db
+      - yaml_db
     env_file:
       - ./.env
 
-  nginx:
+  yaml_nginx:
     build: ./nginx
     volumes:
-      - staticfiles:/code/static/
-      - staticfiles:/code/media/
+      - yaml_staticfiles:/code/static/
+      - yaml_mediafiles:/code/media/
     ports:
-      - "80:80"
+      - "8081:80"
     depends_on:
-      - web
+      - yaml_web

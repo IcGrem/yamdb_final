@@ -27,7 +27,13 @@ SECRET_KEY = str(os.environ.get('SECRET_KEY')) or \
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    '45.90.216.78',
+    'pyproj.ru',
+    'yamdb.pyproj.ru',
+    'localhost',
+    '127.0.0.1'
+]
 
 # Application definition
 

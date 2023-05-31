@@ -9,4 +9,5 @@ COPY . /code
 RUN pip install --upgrade pip
 RUN pip install -r /code/requirements.txt
 
-RUN python manage.py collectstatic --noinput
+RUN chmod +x /code/docker-entrypoint.sh
+ENTRYPOINT ["/code/docker-entrypoint.sh"]
